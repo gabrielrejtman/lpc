@@ -8,7 +8,7 @@ TurtleVisualization = turtle.Screen()
 drawing = turtle.Turtle()
 
 
-def criar_triangulo(x, y):
+def build_triangle(x, y):
     # desenha a caneta
     drawing.penup()
 
@@ -32,8 +32,8 @@ def criar_triangulo(x, y):
 
 # informa a posição atual do cursor para a função
 
-turtle.onscreenclick(criar_triangulo, 1)  # número 1 representa o clique esquerdo
-turtle.onscreenclick(criar_triangulo, 3)  # número 3 representa o clique direito
+turtle.onscreenclick(build_triangle, 1)  # número 1 representa o clique esquerdo
+turtle.onscreenclick(build_triangle, 3)  # número 3 representa o clique direito
 
 
 # mantém a tela aberta
