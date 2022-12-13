@@ -1,11 +1,11 @@
-# Objetivo do Jogo: O primeiro jogador que levar a tartaruga a sua casa vence
-# Como jogar: Jogo de turnos; cada jogador rola um dado e o resultado * 20
-# o número de casas que andará com sua tartaruga
+# Main goal: The first player to reach his turtle's house wins.
+# How to play: Each player has a turn. In every turn, the player 
+# must roll a die and walk 20 times the result that he's gotten.
 
 import random
 import turtle
 
-# abaixo, definição de cor, ícone e posição inicial dos jogadores
+# down below, players initial positions, icons and color definitions
 
 player_one = turtle.Turtle()
 player_one.color("green")
@@ -17,7 +17,7 @@ player_two.color("blue")
 player_two.penup()
 player_two.goto(-200, -100)
 
-# abaixo, os pontos de chegada das tartarugas, representados por círculos de cores correspondentes
+# down below, the turtles objectives, represented by matching-color circles
 
 player_one.goto(300, 60)
 player_one.pendown()
@@ -30,35 +30,35 @@ player_two.circle(40)
 player_two.penup()
 player_two.goto(-200, -100)
 
-# abaixo, criação de um 'dado' utilizando lista
+# creating a die using a list
 dice = [1, 2, 3, 4, 5, 6]
 
-# checando se algum jogador atingiu seu objetivo (equivalente a vitória)
+# checking if some player has reached the objective
 
 for i in range(20):
 
     if player_one.pos() >= (300, 100):
 
-        print("Vitória do jogador 1!")
+        print("Player 1 Won!")
         break
     elif player_two.pos() >= (300, -100):
-        print("Vitória do jogador 2!")
+        print("Player 2 Won!")
         break
-# caso não seja o caso, ocorre a rolagem dos dados automaticamente ao apertar 'enter'
+# in case that does not occur, a player must press 'enter' to roll a die
     else:
-        # vez do jogador 1
-        player_one_turn = input("Pressione 'Enter' para rolar os dados ")
-        dice_outcome = random.choice(dice)  # escolhe um numero automaticamente da lista do dado
-        print("O resultado do dado é: ")
+        # player 1 turn
+        player_one_turn = input("Press 'Enter' to roll a die")
+        dice_outcome = random.choice(dice)  # chooses a random number from the dice
+        print("The outcome is: ")
         print(dice_outcome)
-        print("O número de passos será: ")
+        print("The number of steps is: ")
         print(20 * dice_outcome)
-        player_one.fd(20 * dice_outcome)  # número de passos andados é equivalente a 20x o resultado do dado
-        # vez do jogador 2
-        player_two_turn = input("Pressione 'Enter' para rolar os dados ")
-        dice_outcome = random.choice(dice)  # escolhe um numero automaticamente da lista do dado
-        print("O resultado do dado é: ")
+        player_one.fd(20 * dice_outcome)  # the number of steps taken is equivalent to the die result * 20
+        # player 2 turn
+        player_two_turn = input("Press 'Enter' to roll a die")
+        dice_outcome = random.choice(dice)  # chooses a random number from the dice
+        print("The outcome is: ")
         print(dice_outcome)
-        print("O número de passos será: ")
+        print("The number of steps is: ")
         print(20 * dice_outcome)
         player_two.fd(20 * dice_outcome)
