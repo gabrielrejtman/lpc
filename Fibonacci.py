@@ -1,4 +1,4 @@
-# biblioteca que permite a utilização de formas através de comandos
+# library that allows us to use shapes through commands
 import turtle
 import math
 
@@ -10,10 +10,10 @@ def build_fibonacci(fibo):
     square_a = a
     square_b = b
 
-    # definindo a cor da caneta dos quadrados
+    # defining the color of the pen that draws squares
     x.pencolor("blue")
 
-    # funções para o desenho dos quadrados
+    # functions to draw squares
     x.forward(b * factor)
     x.left(90)
     x.forward(b * factor)
@@ -22,12 +22,12 @@ def build_fibonacci(fibo):
     x.left(90)
     x.forward(b * factor)
 
-    # variável 'temp' recebe o quadrado b, que recebe ele mesmo + o anterior
+    # 'temp' variable equals to the B square(himself + the previous)
     temp = square_b
     square_b = square_b + square_a
     square_a = temp
 
-    # desenhando o resto dos quadrados
+    # drawing the rest of the squares
     for i in range(1, fibo):
 
         x.backward(square_a * factor)
@@ -38,18 +38,18 @@ def build_fibonacci(fibo):
         x.left(90)
         x.forward(square_b * factor)
 
-        # temp recebe o quadrado b e quadrado b recebe ele mesmo + o anterior
+        # 'temp' variable equals to the B square(himself + the previous)
         temp = square_b
         square_b = square_b + square_a
         square_a = temp
 
-    # aqui a caneta volta ao ponto que será o início da espiral (primeiro quadrado)
+    # down below, the pen goes back to the spiral's starting point (1st square)
     x.penup()
     x.setposition(factor, 0)
     x.seth(0)
     x.pendown()
 
-    # definindo a cor da caneta da espiral
+    # defining the color of the pen that draws squares
     x.pencolor("red")
     x.left(90)
 
@@ -68,21 +68,21 @@ def build_fibonacci(fibo):
         b = temp + b
 
 
-factor = 1  # simbolizando o fator multiplicativo da função
+factor = 1  # representing the multiplicative factor of the function
 
 
-# input para o número de elementos da sequência de Fibonacci
-n = int(input("Digite a quantidade de elementos que a sequência irá rodar: "))
+# input for the number of elements in the Fibonacci's Sequence
+n = int(input("How many elements will the sequence have? "))
 
-# definindo as condições que atendam o input
-# caso o número de elementos for maior que 1, a função de criar a sequência é chamada
-# caso contrário, o programa informa que o input deve ser >=1
+# defining the conditions that satisfy the input
+# in case the number of elements is >1, the function that creates the sequence is called
+# otherwise, the program informs that input mush be >=1
 
 if n > 0:
-    print("Sequência de fibonacci para", n, "elementos:")
+    print("Fibonacci's Sequence to", n, "elements:")
     x = turtle.Turtle()
     x.speed(100)
     build_fibonacci(n)
     turtle.done()
 else:
-    print("O número de elementos da sequência deve ser maior que 1")
+    print("The number of elements must be more than 1")
