@@ -1,41 +1,41 @@
-# biblioteca que permite a utilização de formas através de comandos
+# library that allows us to use shapes through commands
 from turtle import *
 
-# define a velocidade da tartaruga
+# defines the speed of the turtle
 speed('fastest')
 
-# rotacionando a tartaruga em 90 graus
+# rotating the turtle in 90 degrees
 rt(-90)
 
-# definição do ângulo entre a base do Y e seus "ramos"
+# definition of the angle between the 'Y' base and its branches
 angle = 30
 
 
-# função para desenhar um formato de 'Y'
+# draws an 'Y' shape
 def draw_y_shape(sz, level):
 
     if level > 0:
 
         colormode(255)
 
-        # muda o modo de cor para rgb e define o tom de verde em intervalos proporcionais ao nível
+        # changes color mode to rgb and defines the green tone in intervals proportional to the level
         pencolor(0, 255 // level, 0)
 
-        # desenhando a base
+        # drawing the base
         fd(sz)
 
-        # mais uma rotação com ângulo definido previamente
+        # another rotation with predetermined angle
         rt(angle)
 
-        # chamada para o desenho da parte esquerda
+        # call out to draw the left part
         draw_y_shape(0.8 * sz, level - 1)
 
         pencolor(0, 255 // level, 0)
 
-        # mais uma rotação de direção, dessa vez para a esquerda e com ângulo maior
+        # another direction rotation, this time to the left and with a larger angle
         lt(2 * angle)
 
-        # chamada para o desenho da parte direita
+        # call out to draw the right part
         draw_y_shape(0.8 * sz, level - 1)
 
         pencolor(0, 255 // level, 0)
@@ -44,5 +44,5 @@ def draw_y_shape(sz, level):
         fd(-sz)
 
 
-# definição de tamanho e nível da árvore
+# definition of size and level of the tree
 draw_y_shape(80, 7)
