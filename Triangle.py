@@ -1,7 +1,7 @@
-# biblioteca que permite a utilização de formas através de comandos
+# library that allows us to use shapes through commands
 import turtle
 
-# abre a tela de visualização
+# open up the visualization screen
 TurtleVisualization = turtle.Screen()
 
 # creating tess object
@@ -9,10 +9,10 @@ drawing = turtle.Turtle()
 
 
 def build_triangle(x, y):
-    # desenha a caneta
+    # draws the pen
     drawing.penup()
 
-    # move o cursor para posição predeterminada
+    # moves the mouse cursor to an established position
     drawing.goto(x, y)
 
     # it is used to draw in the pen
@@ -20,21 +20,21 @@ def build_triangle(x, y):
 
     for i in range(3):
 
-        # move a caneta 100 unidades para frente do clique
+        # moves the pen 100 unities forward from the click
         drawing.forward(100)
 
-        # move a caneta 120 graus para a esquerda
+        # moves the pen 120 degrees left
         drawing.left(120)
 
-        # move mais 100 unidades para frente
+        # moves another 100 unities forward
         drawing.forward(100)
 
 
-# informa a posição atual do cursor para a função
+# informs the current cursor position to the function
 
-turtle.onscreenclick(build_triangle, 1)  # número 1 representa o clique esquerdo
-turtle.onscreenclick(build_triangle, 3)  # número 3 representa o clique direito
+turtle.onscreenclick(build_triangle, 1)  # number 1 represents left click
+turtle.onscreenclick(build_triangle, 3)  # number 2 represents right click
 
 
-# mantém a tela aberta
+# keeps the screen up and running
 turtle.done()
